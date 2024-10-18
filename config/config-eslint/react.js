@@ -20,6 +20,7 @@ module.exports = {
     ].map(require.resolve),
     'plugin:prettier/recommended'
   ],
+  plugins: ['simple-import-sort'],
   parserOptions: {
     project
   },
@@ -39,7 +40,9 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.js', '**/*.css'],
   // add rules configurations here
   rules: {
-    'import/no-default-export': 'off'
+    'import/no-default-export': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error'
   },
   overrides: [
     {

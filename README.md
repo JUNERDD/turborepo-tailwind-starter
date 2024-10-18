@@ -1,58 +1,59 @@
-# Turborepo Tailwind CSS starter
+# Turborepo Tailwind CSS 启动器
 
-This is an official starter Turborepo.
+这是继承自[官方的 Turborepo 启动器](https://github.com/vercel/turbo/tree/main/examples/with-tailwind)。
 
-## Using this example
+## 使用此示例
 
-Run the following command:
+运行以下命令：
 
 ```sh
-npx create-turbo@latest -e with-tailwind
+git clone https://github.com/JUNERUSE/turborepo-tailwind-starter.git
 ```
 
-## What's inside?
+## 包含内容
 
-This Turborepo includes the following packages/apps:
+这个 Turborepo 包含以下包/应用：
 
-### Apps and Packages
+### 应用和包
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@config/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@config/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `docs`：一个使用 [Next.js](https://nextjs.org/) 和 [Tailwind CSS](https://tailwindcss.com/) 的应用
+- `web`：另一个使用 [Next.js](https://nextjs.org/) 和 [Tailwind CSS](https://tailwindcss.com/) 的应用
+- `@repo/ui`：一个简单的 React 组件库，使用 [Tailwind CSS](https://tailwindcss.com/)，被 `web` 和 `docs` 应用共享
+- `@config/eslint-config`：`eslint` 配置（包括 `eslint-config-next` 、 `eslint-config-prettier` 和 `eslint-plugin-prettier`）
+- `@config/prettier-config`：`prettier` 配置（包括 `prettier-plugin-packagejson` 和 `prettier-plugin-tailwindcss`）
+- `@config/typescript-config`：整个 monorepo 中使用的 `tsconfig.json`
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+每个包/应用均 100% 使用 [TypeScript](https://www.typescriptlang.org/)。
 
-### Building packages/ui
+### 构建 packages/ui
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.js`. This was chosen for several reasons:
+这个示例设置为将 `ui` 组件的编译样式输出到 `dist` 目录。组件的 `.tsx` 文件通过 `next.config.js` 中的 `transpilePackages` 直接被 Next.js 应用使用。这么做有几个原因：
 
-- Make sharing one `tailwind.config.js` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
+- 使得在应用和包之间共享一个 `tailwind.config.js` 尽可能容易。
+- 仅依赖 Next.js 编译器和 `tailwindcss` 简化包的编译。
+- 确保 Tailwind 类不会相互覆盖。`ui` 包为其类使用 `ui-` 前缀。
+- 维护明确的包导出边界。
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.js` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
+另一种选择是直接从源代码使用 `packages/ui`，而不进行构建。如果使用此选项，您需要在应用中的 `tailwind.config.js` 中更新您的包位置，以便它可以找到所有 `tailwindcss` 类名的使用，以进行 CSS 编译。
 
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
+例如，在 [tailwind.config.js](packages/tailwind-config/tailwind.config.js) 中：
 
 ```js
   content: [
-    // app content
+    // 应用内容
     `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
+    // 如果不进行编译，包含包
     "../../packages/ui/*.{js,ts,jsx,tsx}",
   ],
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+如果选择此策略，您可以从 `ui` 包中移除 `tailwindcss` 和 `autoprefixer` 依赖项。
 
-### Utilities
+### 工具
 
-This Turborepo has some additional tools already setup for you:
+这个 Turborepo 已为您设置了一些额外的工具：
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [Tailwind CSS](https://tailwindcss.com/) 用于样式
+- [TypeScript](https://www.typescriptlang.org/) 用于静态类型检查
+- [ESLint](https://eslint.org/) 用于代码检查
+- [Prettier](https://prettier.io) 用于代码格式化

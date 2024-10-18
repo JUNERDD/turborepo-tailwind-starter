@@ -23,6 +23,7 @@ module.exports = {
     'turbo',
     'plugin:prettier/recommended'
   ],
+  plugins: ['simple-import-sort'],
   parserOptions: {
     project
   },
@@ -43,6 +44,8 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'dist/'],
   // add rules configurations here
   rules: {
-    'import/no-default-export': 'off'
+    'import/no-default-export': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error'
   }
 }
