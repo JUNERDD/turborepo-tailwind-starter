@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwind",
+  "name": "turborepo-demo",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -7,6 +7,7 @@
     "dev": "turbo dev",
     "format": "prettier --write \"**/*.{js,jsx,mjs,ts,tsx,md}\" \"**/package.json\"",
     "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
     "type-check": "turbo type-check"
   },
   "devDependencies": {
