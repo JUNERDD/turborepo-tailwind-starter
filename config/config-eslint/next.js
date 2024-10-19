@@ -46,6 +46,7 @@ module.exports = {
   rules: {
     'import/no-default-export': 'off',
     'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error'
+    'simple-import-sort/exports': 'error',
+    'import/order': 'off'
   }
 }

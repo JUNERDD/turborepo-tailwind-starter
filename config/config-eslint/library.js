@@ -16,6 +16,7 @@ module.exports = {
     ...['@vercel/style-guide/eslint/node', '@vercel/style-guide/eslint/typescript'].map(require.resolve),
     'plugin:prettier/recommended'
   ],
+  plugins: ['simple-import-sort'],
   parserOptions: {
     project
   },
@@ -33,5 +34,10 @@ module.exports = {
       }
     }
   },
-  ignorePatterns: ['node_modules/', 'dist/']
+  ignorePatterns: ['node_modules/', 'dist/'],
+  rules: {
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/order': 'off'
+  }
 }
