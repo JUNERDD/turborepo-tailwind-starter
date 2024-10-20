@@ -47,6 +47,7 @@ module.exports = {
     'import/no-default-export': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-    'import/order': 'off'
+    'import/order': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off'
   }
 }

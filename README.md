@@ -17,7 +17,7 @@ git clone https://github.com/JUNERUSE/turborepo-tailwind-starter.git
 ### 应用和包
 
 - `docs`：一个使用 [Next.js](https://nextjs.org/) 和 [Tailwind CSS](https://tailwindcss.com/) 的应用
-- `web`：另一个使用 [Next.js](https://nextjs.org/) 和 [Tailwind CSS](https://tailwindcss.com/) 的应用
+- `web`：另一个使用 [Next.js](https://nextjs.org/) 和 [Tailwind CSS](https://tailwindcss.com/) 的应用，包含了 [shadcn/ui](https://ui.shadcn.com/) 的组件
 - `@repo/ui`：一个简单的 React 组件库，使用 [Tailwind CSS](https://tailwindcss.com/)，被 `web` 和 `docs` 应用共享
 - `@config/eslint-config`：`eslint` 配置（包括 `eslint-config-next` 、 `eslint-config-prettier` 和 `eslint-plugin-prettier`）
 - `@config/prettier-config`：`prettier` 配置（包括 `prettier-plugin-packagejson` 和 `prettier-plugin-tailwindcss`）
